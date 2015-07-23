@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/common/ng-table.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/management/js/market2oneday.js"></script>
+}
+
+<section id="content" ng-controller="ManagementCtrl">
+    <section class="vbox">
+        <header class="header bg-success bg-gradient">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#seller" data-toggle="tab">신청인원 관리</a></li>
+            </ul>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="tab-content">
+                <div class="tab-pane active" id="seller">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            총 신청 인원 수: <span style="color:#ff4444">{{oneday.totalCount}}명</span>
+                        </header>
+                        <div class="table-responsive">
+                            <table ng-table="tableParams" class="table table-striped m-b-none text-sm">
+                                <tr ng-repeat="item in oneday.items">
+                                    <td data-title="'번호'" sortable="'Id'">
+                                        {{item.Id}}
+                                    </td>
+                                    <td data-title="'이름'" sortable="'Name'">
+                                        <a href="/Management/DandiMarket2OnedayDetail?id={{item.Id}}">{{item.Name}}</a>
+                                    </td>
+                                    <td data-title="'연락처'" sortable="'Phone'">
+                                        {{item.Phone | shortdate}}
+                                    </td>
+                                    <td data-title="'등록일'" sortable="'Created'">
+                                        {{item.Created | shortdate}}
+                                    </td>
+                                    <td data-title="'확인여부'" sortable="'IsChecked'">
+                                        <span class="dandi-red" ng-if="item.IsChecked">
+                                            확인함
+                                        </span>
+                                        <span ng-if="!item.IsChecked">
+                                            확인안함
+                                        </span>
+                                    </td>
+                                    <td data-title="'확인일'" sortable="'Checked'">
+                                        <span ng-if="item.Checked != null">
+                                            {{item.Checked | shortdate}}
+                                        </span>
+                                    </td>
+                                    <td data-title="'상세내용'">
+                                        <a href="/Management/DandiMarket2OnedayDetail?id={{item.Id}}">보기</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

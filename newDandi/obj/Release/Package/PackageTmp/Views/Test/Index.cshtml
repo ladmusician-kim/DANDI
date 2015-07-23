@@ -1,0 +1,48 @@
+﻿@model newDandi.Models.VIEWMODEL.CommonViewModel
+@{
+    Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/dandimarket2/common.css" rel="stylesheet" />
+    <style type="text/css">
+        .testPic {
+        }
+    </style>
+}
+@section Script {
+    <script src="~/Lib/js/common/angular.js"></script>
+    <script src="~/Lib/js/common/ajaxBody.js"></script>
+    <script src="~/Lib/js/common/underscore-min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myApp', []).
+        controller('TestCtrl', function ($scope) {
+            $.ajax({
+                type: "GET",
+                dataType: "jsonp",
+                cache: false,
+                url: "https://api.instagram.com/v1/tags/단디프로젝트/media/recent?client_id=a5da03ff45654382a366ddbcb8d52be7",
+                success: function (data) {
+                    _.each(data.data, function (each) {
+                        console.log(each);
+                        var url = each.images.thumbnail.url;
+                        $("#test").append("<img class='testPic' src='" + url + "'></img>");
+                    });
+                }
+            });
+        });
+
+        ;
+    </script>
+}
+
+
+<!-- Home Section -->
+<div ng-app="myApp">
+    <div ng-controller="TestCtrl">
+        <div id="test">
+
+        </div>
+    </div>
+</div>
+
+

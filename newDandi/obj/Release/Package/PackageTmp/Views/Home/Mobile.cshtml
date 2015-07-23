@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/home/mobile.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/js/common/mobile/jquery.fullPage-mobile.js"></script>
+    <script src="~/Lib/js/home/mobile.js"></script>
+}
+
+<div class="dandi-footer">
+    이미 아이디가 있다면?!
+    <i class="fa fa-hand-o-down"></i>
+</div>
+
+<div id="fullpage" ng-controller="HomeCtrl">
+    <div class="section bg-dark-alfa-50" id="section0">
+        <div class="row dandimarekt">
+            <div class="col-sm-4 col-lg-offset-4">
+                <div class="">
+                    <div class="col-sm-12 dandi-title">
+                        DANDIMARKET
+                    </div>
+                    <div class="dandi-content col-sm-12 mt-10" data-anim-type="flip-in-top-front" data-anim-delay="800">
+                        '단디마켓'은 여러분들 각자의 색깔을 함께 조화시키고 넘어서서 새로운 색깔을
+                        만들어 보려고 합니다. 단순 판매자와 소비자관계의 '장'이아닌 서로 공감하고
+                        소통할 수 있는 그런 소통의 공간 '단디마켓'이 함께합니다!
+                    </div>
+                    <div ng-click="goLogin()" class="col-sm-12 dandi-btn-login mt-20">
+                        <a href="/Mobile/Login" class="dandi-btn">로그인</a>
+                    </div>
+                    <div ng-click="goSign()" class="col-sm-12 dandi-btn-assign mt-10">
+                        <a href="/Mobile/Sign" class="dandi-btn">회원가입</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="section bg-dark-alfa-50" id="section1">
+        <div class="row">
+            <div class="intro col-sm-12">
+                <h1 class="align-center">
+                    DANDI MARKET
+                </h1>
+                <p class="align-center">
+                    갈때가더라도 10초 정도는 줄 수 있잖아?
+                </p>
+            </div>
+            <div class="dandi-form col-sm-4 col-lg-offset-4">
+                <div class="mb-20">
+                    <input id="dandi-sign-input-username" class="form-control dandi-sign-username"
+                           ng-model="user.username"
+                           type="text" placeholder="사용하실 닉네임." />
+                </div>
+                <div class="mb-20 mt-20">
+                    <input id="dandi-sign-input-email" class="dandi-sign-email form-control"
+                           ng-model="user.email"
+                           type="text" placeholder="현재 사용하시는 이메일 주소를 입력해 주세요." />
+                </div>
+                <div class="mb-20">
+                    <input id="dandi-sign-input-pwd" class="dandi-sign-password form-control" type="password"
+                           ng-model="user.password"
+                           placeholder="비밀번호 (6자리 이상)" />
+                </div>
+                <div class="mb-20">
+                    <input type="button" class=" btn btn-mod dandi-btn dandi-btn-sign-complete"
+                           ng-click="sign()"
+                           value="가입하기" />
+                </div>
+            </div>
+            @*<div class="col-sm-12 align-center">
+                <a class="dandi-already-login align-center">
+                    이미 아이디가 있다면?!
+                    <i class="fa fa-hand-o-down"></i>
+                </a>
+            </div>*@
+    @*
+        </div>
+    </div>
+    <div class="section bg-dark-alfa-50" id="section2">
+        <div class="intro">
+            <div class="row align-center">
+                <h1 class="dandi-relative">
+                    ARE YOU READY
+                </h1>
+                <p class="dandi-relative">
+                    단디 준비해라?
+                </p>
+                @using (Html.BeginForm("Login", "Account", new { }, FormMethod.Post))
+                {
+                    <div class="dandi-form col-sm-offset-4 col-sm-4">
+                        <div class="mb-20 mt-20">
+                            <input id="dandi-login-input-email"
+                                   name="email"
+                                   class="form-control" type="text" placeholder="이메일 주소를 입력해 주세요." />
+                        </div>
+                        <div class="mb-20">
+                            <input id="dandi-login-input-pwd"
+                                   name="password"
+                                   class="form-control" type="password" placeholder="비밀번호" />
+                        </div>
+                        <div class="mb-20">
+                            <input type="submit" class="btn btn-mod dandi-btn dandi-btn-sign-complete" value="로그인하기" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>*@
+</div>

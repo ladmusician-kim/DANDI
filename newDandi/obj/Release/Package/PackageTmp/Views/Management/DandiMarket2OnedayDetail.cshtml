@@ -1,0 +1,70 @@
+﻿@model newDandi.Views.Management.DandiMarket2OnedayDetailViewModel
+@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/management/css/market2sellerdetail.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/management/js/market2sellerdetail.js"></script>
+}
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-white b-b">
+            <p>@(Model.Oneday.Name) 신청자 상세내역</p>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            @if (Model.Oneday.IsChecked)
+                            {
+                                <header class="panel-heading bg-primary lter no-borders">
+                                    <div class="clearfix">
+                                        <div class="clear">
+                                            <small class="text-muted">원데이 클레스 선택된 사람입니다</small>
+                                        </div>
+                                    </div>
+                                </header>
+                            }
+
+                            <p class="dandi-sub-title m-t">이름</p>
+                            <p class="dandi-description">@(Model.Oneday.Name)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">전화번호</p>
+                            <p class="dandi-description">@(Model.Oneday.Phone)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">등록일</p>
+                            <p class="dandi-description">@(Model.Oneday.Created)</p>
+                            <div class="line"></div>
+
+                            @if (Model.Oneday.IsChecked)
+                            {
+                                <p class="dandi-sub-title">확정일</p>
+                                <p class="dandi-description">@(Model.Oneday.Checked)</p>
+                                <div class="line"></div>
+                            }
+                            
+
+                            <p class="align-right">
+                                <a href="/Management/DandiMarket2Oneday" class="btn btn-s-md btn-default">목록보기</a>
+                                @if (Model.Oneday.IsChecked)
+                                {
+                                    <a href="/Management/SelectOneday?id=@(Model.Oneday.Id)&isChecked=false" class="btn btn-s-md btn-danger">제외하기</a>
+                                }
+                                else
+                                {
+                                    <a href="/Management/SelectOneday?id=@(Model.Oneday.Id)&isChecked=true" class="btn btn-s-md btn-success">확정하기</a>
+                                }
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,111 @@
+﻿@model newDandi.Views.DandiMarket2.RequestViewModel
+@{
+    Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/dandimarket2/common.css" rel="stylesheet" />
+}
+@section Script {
+}
+
+
+<!-- Home Section -->
+<section class="page-section bg-dark-alfa-70" data-background="/Lib/images/common/bg/oneday-bg.jpg"
+         style="background-position-y: 70%;">
+    <div class="container relative pt-40">
+        <div class="align-center">
+            <h3 class="section-title">ONEDAY CLASS</h3>
+            <div class="section-heading">단디마켓과 함께하는 원데이클래스</div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section" style="padding: 90px 0;border-bottom: 1px solid #ccc">
+    <div class="container relative pt-40">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="dandi-title mb-10">ONEDAY CLASS</div>
+            </div>
+            <div class="col-sm-12">
+                <div class="dandi-content align-center">
+                    단디 마켓에서 작은 부스를 마련하여 원데이클래스를 진행합니다.
+                    나누어 주는 양말과 단순한 재료로 조물조물 인형을 만들어
+                    한땀한땀 정성스레 온전히 나만을 위한 시간이 만들어 보세요!
+                </div>
+            </div>
+        </div>
+        <div class="row mt-30">
+            <div class="col-sm-4">
+                <div class="dandi-title mb-10">참가비</div>
+            </div>
+            <div class="col-sm-8">
+                <div class="dandi-content align-center">
+                    12,000원
+                </div>
+            </div>
+        </div>
+        <div class="row mt-20">
+            <div class="col-sm-4">
+                <div class="dandi-title mb-10">정원</div>
+            </div>
+            <div class="col-sm-8">
+                <div class="dandi-content align-center">
+                    5명
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+@*<section class="page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                <div class="section-title dandi_title">
+                    원데이클래스 참가신청
+                </div>
+                <div class="section-line mb-60 mb-xxs-30"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <img style="width: 350px; height: 401px;" src="~/Lib/images/dandimarket2/one1.jpg" />
+            </div>
+            <div class="col-sm-4">
+                <img style="width: 350px; height: 401px;" src="~/Lib/images/dandimarket2/one2.jpg" />
+            </div>
+            <div class="col-sm-4">
+                <img style="width: 350px; height: 401px;" src="~/Lib/images/dandimarket2/one3.jpg" />
+            </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+            <div class="col-sm-12 mb-40 mt-30" style="text-align: center;">
+                @using (Html.BeginForm("SubmitOnedayClass", "DandiMarket2", new { }, FormMethod.Post))
+                {
+                    <div class="mb-20 mb-md-10">
+                        <input type="text" class="form-control input-lg ng-pristine ng-valid"
+                               name="name"
+                               placeholder="이름" maxlength="100">
+                    </div>
+                    <div class="mb-20 mb-md-10">
+                        <input type="email" class="form-control input-lg ng-pristine ng-valid ng-valid-email" placeholder="이메일"
+                               name="email"
+                               value="@Model.User.Email"
+                               maxlength="100">
+                    </div>
+                    <div class="mb-20 mb-md-10">
+                        <input type="text" class="form-control input-lg ng-pristine ng-valid" placeholder="연락처"
+                               name="phone"
+                               maxlength="100">
+                    </div>
+                    <div class="mb-10">
+                        <input type="submit" class="btn btn-mod btn-border-c btn-large" value="신청하기" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>*@
+
+

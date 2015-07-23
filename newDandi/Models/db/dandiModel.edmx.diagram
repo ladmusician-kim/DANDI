@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45446f9b115a40b09e0a064d169042ea" Name="다이어그램1" ZoomLevel="111">
+        <EntityTypeShape EntityType="dandiModel.dandiuser" Width="1.5" PointX="5.75" PointY="5.375" />
+        <EntityTypeShape EntityType="dandiModel.Daypic" Width="1.5" PointX="8" PointY="1.625" />
+        <EntityTypeShape EntityType="dandiModel.Error" Width="1.5" PointX="7.75" PointY="5.375" />
+        <EntityTypeShape EntityType="dandiModel.OnedayClass" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="dandiModel.ProductCategory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="dandiModel.Project" Width="1.5" PointX="5.75" PointY="1.625" />
+        <EntityTypeShape EntityType="dandiModel.RequestSeller" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="dandiModel.SellerCategory" Width="1.5" PointX="5.75" PointY="9.375" />
+        <EntityTypeShape EntityType="dandiModel.User" Width="1.5" PointX="0.75" PointY="4.25" />
+        <AssociationConnector Association="dandiModel.FK_Project_Daypic" />
+        <AssociationConnector Association="dandiModel.FK_User_OnedayClass" />
+        <AssociationConnector Association="dandiModel.FK_ProductCategory_RequestSeller" />
+        <AssociationConnector Association="dandiModel.FK_User_RequestSeller" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

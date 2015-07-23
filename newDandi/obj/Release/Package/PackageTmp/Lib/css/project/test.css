@@ -1,0 +1,40 @@
+/* theme */
+.main-nav {
+    height: 80px !important;
+}
+
+
+.blog-item-foot a {
+    width : 100%;
+}
+
+
+
+
+
+
+
+
+p {
+    text-align: justify;
+}
+.dandi-post {
+    margin-bottom: 16px;
+}
+
+
+
+.widget-bottom a {
+    width: 100%;
+}
+.btn-mod.btn-border {
+    border: 1px solid #aaa;
+    color: #777;
+}
+
+
+.dandi-event {
+}
+.dandi-event:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/management/css/market2sellerdetail.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/management/js/market2sellerdetail.js"></script>
+}
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-white b-b">
+            <p>단디마켓#2 사진추가</p>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            @using (Html.BeginForm("DandiMarket2AddPicture", "Management", FormMethod.Post, new { id = "requestSeller", enctype = "multipart/form-data" }))
+                            {
+                                <p class="dandi-sub-title m-t">Title</p>
+                                <p class="dandi-description">
+                                    <input type="text" class="form-control" placeholder="사진 제목을 입력하세요" name="title">
+                                </p>
+                                <p class="dandi-sub-title m-t">Content</p>
+                                <p class="dandi-description">
+                                    <textarea class="form-control" placeholder="내용을 입력하세요" name="content"></textarea>
+                                </p>
+                                <div class="line"></div>
+
+                                <p class="dandi-sub-title">사진</p>
+                                <p class="dandi-description">
+                                    <input type="file" name="file" />
+                                </p>
+                                <input type="hidden" name="projectId" value="2" />
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

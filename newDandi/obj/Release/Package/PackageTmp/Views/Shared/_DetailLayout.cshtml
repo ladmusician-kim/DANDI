@@ -1,0 +1,132 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DANDI PROJECT</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta name="author" content="Roman Kirichik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="google-site-verification" content="_plMeZG_v5vd02MmWr7vRrTRtde9gxYw7RLjQnisSwc" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/Lib/images/common/mark_nonbackground.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <!-- CSS -->
+    <link href="~/Lib/css/common/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Lib/css/project/theme/style.css">
+    <link rel="stylesheet" href="/Lib/css/project/theme/style-responsive.css">
+    <link href="~/Lib/css/common/font.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Lib/css/project/theme/animate.css">
+    <link rel="stylesheet" href="/Lib/css/project/theme/animations.min.css">
+    <link rel="stylesheet" href="/Lib/css/project/theme/vertical-rhythm.min.css">
+    <link rel="stylesheet" href="/Lib/css/project/theme/owl.carousel.css">
+    <link rel="stylesheet" href="/Lib/css/project/theme/magnific-popup.css">
+    <link rel="stylesheet" href="/Lib/css/project/theme/black.css">
+    <link href="~/Lib/css/project/theme/simple-line-icons.css" rel="stylesheet" />
+    <link href="~/Lib/css/common/font.css" rel="stylesheet" />
+    <link href="~/Lib/css/project/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    @RenderSection("Style", false)
+
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-55655064-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</head>
+<body class="appear-animate">
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <b class="spinner">Loading...</b>
+    </div>
+    <!-- End Page Loader -->
+    <!-- Page Wrap -->
+    <div class="page" id="top">
+        <!-- Navigation panel -->
+        <nav class="main-nav js-stick dark">
+            <div class="full-wrapper relative clearfix">
+                <div class="nav-logo-wrap local-scroll">
+                    <a href="/Project/Index" class="logo">
+                        <img src="~/Lib/images/common/header-typo-transperency.png" width="80" height="27" />
+                    </a>
+                </div>
+                <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+                <div class="inner-nav desktop-nav">
+                    <ul class="clearlist scroll-nav local-scroll">
+                        <li class="active"><a href="/Project/Index">PROJECT</a></li>
+                        <li><a href="/Account/Logout">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        @RenderBody()
+
+        <!-- Foter -->
+        <footer class="small-section bg-dark footer">
+            <div class="container">
+                <div class="footer-text">
+                    <div class="footer-copy">
+                        &copy; DANDI MARKET
+                    </div>
+                </div>
+                <div class="footer-social-links">
+                    <div class="social-links tooltip-bot">
+                        <a href="http://instagram.com/dandiproject" data-original-title="" title="">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <!-- End Page Wrap -->
+    <!-- JS -->
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/Lib/js/project/theme/SmoothScroll.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.localScroll.min.js"></script>
+
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.ba-hashchange.min.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.viewport.mini.js"></script>
+
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.countTo.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.appear.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.sticky.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/owl.carousel.min.js"></script>
+
+
+    <script type="text/javascript" src="/Lib/js/project/theme/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/imagesloaded.pkgd.min.js"></script>
+
+
+
+    <script type="text/javascript" src="/Lib/js/project/theme/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/all.js"></script>
+    <script type="text/javascript" src="/Lib/js/project/theme/animations.min.js"></script>
+    <!--[if lt IE 10]><script type="text/javascript" src="/Lib/js/project/theme/placeholder.js"></script><![endif]-->
+    @RenderSection("Script", false)
+</body>
+</html>

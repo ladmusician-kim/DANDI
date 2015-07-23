@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DDEF081E-4B28-48D8-855E-BB45453D870B}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>newDandi</RootNamespace>
+    <AssemblyName>newDandi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SimpleCrypto">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DandiMarket2Controller.cs" />
+    <Compile Include="Controllers\DandiMarket3Controller.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\dandiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dandiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\dandiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\dandiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dandiModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\dandiuser.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Daypic.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Error.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\OnedayClass.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\ProductCategory.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Project.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\RequestSeller.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\SellerCategory.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\User.cs">
+      <DependentUpon>dandiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DTO\DaypicDTO.cs" />
+    <Compile Include="Models\DTO\ItemsDTO.cs" />
+    <Compile Include="Models\DTO\OnedayClassDTO.cs" />
+    <Compile Include="Models\DTO\ProductCategoryDTO.cs" />
+    <Compile Include="Models\DTO\ProjectDTO.cs" />
+    <Compile Include="Models\DTO\RequestSellerDTO.cs" />
+    <Compile Include="Models\DTO\SellerImageDTO.cs" />
+    <Compile Include="Models\DTO\UserDTO.cs" />
+    <Compile Include="Models\VIEWMODEL\CommonViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ManagementService.cs" />
+    <Compile Include="Views\DandiMarket2\ViewModel.cs" />
+    <Compile Include="Views\DandiMarket3\ViewModel.cs" />
+    <Compile Include="Views\Management\ViewModel.cs" />
+    <Compile Include="Views\Mobile\ViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Lib\css\common\color.css" />
+    <Content Include="Lib\css\common\animate.css" />
+    <Content Include="Lib\css\common\animations.min.css" />
+    <Content Include="Lib\css\common\bootstrap.css" />
+    <Content Include="Lib\css\common\hover.css" />
+    <Content Include="Lib\css\common\dropzone.css" />
+    <Content Include="Lib\css\dandimarket2\common.css" />
+    <Content Include="Lib\css\dandimarket2\index.css" />
+    <Content Include="Lib\css\dandimarket2\requestSeller.css" />
+    <Content Include="Lib\css\home\index.css" />
+    <Content Include="Lib\css\common\jquery.fullPage.css" />
+    <Content Include="Lib\css\common\layout.css" />
+    <Content Include="Lib\css\common\simple-line-icons.css" />
+    <Content Include="Lib\css\common\style.css" />
+    <Content Include="Lib\css\common\theme.css" />
+    <EntityDeploy Include="Models\db\dandiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dandiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Lib\css\mobile\common.css" />
+    <Content Include="Lib\css\project\test.css" />
+    <Content Include="Lib\css\project\index.css" />
+    <Content Include="Lib\css\project\theme.css" />
+    <Content Include="Lib\css\common\font.css" />
+    <Content Include="Lib\css\project\theme\animate.css" />
+    <Content Include="Lib\css\project\theme\animations.min.css" />
+    <Content Include="Lib\css\project\theme\black.css" />
+    <Content Include="Lib\css\project\theme\font-awesome.css" />
+    <Content Include="Lib\css\project\theme\magnific-popup.css" />
+    <Content Include="Lib\css\project\theme\owl.carousel.css" />
+    <Content Include="Lib\css\project\theme\simple-line-icons.css" />
+    <Content Include="Lib\css\project\theme\style-responsive.css" />
+    <Content Include="Lib\css\project\theme\style.css" />
+    <Content Include="Lib\css\project\theme\vertical-rhythm.min.css" />
+    <Content Include="Lib\images\common\banner\banner1.jpg" />
+    <Content Include="Lib\images\common\banner\banner2.jpg" />
+    <Content Include="Lib\images\common\bg\band-bg.jpg" />
+    <Content Include="Lib\images\common\bg\bg1.jpg" />
+    <Content Include="Lib\images\common\bg\bg2.jpg" />
+    <Content Include="Lib\images\common\bg\oneday-bg.jpg" />
+    <Content Include="Lib\images\common\bg\panel1.png" />
+    <Content Include="Lib\images\common\bg\panel2.png" />
+    <Content Include="Lib\images\common\bg\panel3.jpg" />
+    <Content Include="Lib\images\common\bg\range-bg-mobile.jpg" />
+    <Content Include="Lib\images\common\bg\range-bg-web.jpg" />
+    <Content Include="Lib\images\common\bg\range-post-mobile.jpg" />
+    <Content Include="Lib\images\common\bg\range-post-web.jpg" />
+    <Content Include="Lib\images\common\event\insta1.jpg" />
+    <Content Include="Lib\images\common\mark.jpg" />
+    <Content Include="Lib\images\common\mark_nonbackground.png" />
+    <Content Include="Lib\images\dandimarket2\gone.jpg" />
+    <Content Include="Lib\images\dandimarket2\hugone.jpg" />
+    <Content Include="Lib\images\dandimarket2\massal.jpg" />
+    <Content Include="Lib\images\dandimarket2\massal1.jpg" />
+    <Content Include="Lib\images\dandimarket2\onday.jpg" />
+    <Content Include="Lib\images\dandimarket2\one1.jpg" />
+    <Content Include="Lib\images\dandimarket2\one2.jpg" />
+    <Content Include="Lib\images\dandimarket2\one3.jpg" />
+    <Content Include="Lib\images\dandimarket2\panel1.png" />
+    <Content Include="Lib\images\dandimarket2\panel2.png" />
+    <Content Include="Lib\images\dandimarket2\panel3.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_1.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_2.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_3.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_4.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_5.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_6.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_7.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_8.jpg" />
+    <Content Include="Lib\images\dandimarket3\post_9.jpg" />
+    <Content Include="Lib\images\dandimarket3\small_post_1.jpg" />
+    <Content Include="Lib\images\home\bg5.jpg" />
+    <Content Include="Lib\images\home\bg6.jpg" />
+    <Content Include="Lib\images\home\bg7.jpg" />
+    <Content Include="Lib\images\project\bg\bg1.JPG" />
+    <Content Include="Lib\images\project\bg\bg2.jpg" />
+    <Content Include="Lib\images\project\bg\bg3.jpg" />
+    <Content Include="Lib\images\project\bg\bg4.jpg" />
+    <Content Include="Lib\images\project\post\2-post1.jpg" />
+    <Content Include="Lib\images\project\post\2-post2.jpg" />
+    <Content Include="Lib\images\project\post\2-post3.jpg" />
+    <Content Include="Lib\images\project\post\post1.jpg" />
+    <Content Include="Lib\images\project\post\post2.jpg" />
+    <Content Include="Lib\images\project\post\post4.jpg" />
+    <Content Include="Lib\images\project\scene\scene1.jpg" />
+    <Content Include="Lib\images\project\seller\seller1.jpg" />
+    <Content Include="Lib\images\project\seller\seller2.jpg" />
+    <Content Include="Lib\images\project\seller\seller3.jpg" />
+    <Content Include="Lib\images\project\seller\seller4.jpg" />
+    <Content Include="Lib\js\common\instafeed.js" />
+    <Content Include="Lib\js\dandimarket2\dropzone.js" />
+    <Content Include="Lib\js\dandimarket2\angular-file-upload.js" />
+    <Content Include="Lib\js\dandimarket2\requestSeller.js" />
+    <Content Include="Lib\js\project\index.js" />
+    <Content Include="Lib\js\project\theme\all.js" />
+    <Content Include="Lib\js\project\theme\animations.min.js" />
+    <Content Include="Lib\js\project\theme\bootstrap.min.js" />
+    <Content Include="Lib\js\project\theme\imagesloaded.pkgd.min.js" />
+    <Content Include="Lib\js\project\theme\isotope.pkgd.min.js" />
+    <Content Include="Lib\js\project\theme\jquery-1.11.1.min.js" />
+    <Content Include="Lib\js\project\theme\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Lib\js\project\theme\jquery.appear.js" />
+    <Content Include="Lib\js\project\theme\jquery.ba-hashchange.min.js" />
+    <Content Include="Lib\js\project\theme\jquery.countTo.js" />
+    <Content Include="Lib\js\project\theme\jquery.easing.1.3.js" />
+    <Content Include="Lib\js\project\theme\jquery.fitvids.js" />
+    <Content Include="Lib\js\project\theme\jquery.localScroll.min.js" />
+    <Content Include="Lib\js\project\theme\jquery.magnific-popup.min.js" />
+    <Content Include="Lib\js\project\theme\jquery.parallax-1.1.3.js" />
+    <Content Include="Lib\js\project\theme\jquery.scrollTo.min.js" />
+    <Content Include="Lib\js\project\theme\jquery.sticky.js" />
+    <Content Include="Lib\js\project\theme\jquery.viewport.mini.js" />
+    <Content Include="Lib\js\project\theme\owl.carousel.min.js" />
+    <Content Include="Lib\js\project\theme\SmoothScroll.js" />
+    <Content Include="Lib\management\css\datepicker.css" />
+    <Content Include="Lib\management\css\market2sellerdetail.css" />
+    <Content Include="Lib\management\css\market2seller.css" />
+    <Content Include="Lib\management\css\common.css" />
+    <Content Include="Lib\management\css\menu.css" />
+    <Content Include="Lib\management\js\bootstrap-datepicker.js" />
+    <Content Include="Lib\management\js\market2picture.js" />
+    <Content Include="Lib\management\js\market2oneday.js" />
+    <Content Include="Lib\management\js\addProductCategory.js" />
+    <Content Include="Lib\management\js\market3seller.js" />
+    <Content Include="Lib\management\js\productCategory.js" />
+    <Content Include="Lib\management\js\project.js" />
+    <Content Include="Lib\management\js\user.js" />
+    <Content Include="Lib\management\js\market2sellerdetail.js" />
+    <Content Include="Lib\management\js\market2seller.js" />
+    <Content Include="Lib\management\Lib\css\animate.css" />
+    <Content Include="Lib\management\Lib\css\app.css" />
+    <Content Include="Lib\management\Lib\css\bootstrap.css" />
+    <Content Include="Lib\management\Lib\css\font-awesome.min.css" />
+    <Content Include="Lib\management\Lib\css\font.css" />
+    <Content Include="Lib\management\Lib\css\landing.css" />
+    <Content Include="Lib\management\Lib\css\plugin.css" />
+    <Content Include="Lib\management\Lib\images\avatar.jpg" />
+    <Content Include="Lib\management\Lib\images\avatar_default.jpg" />
+    <Content Include="Lib\management\Lib\images\ipad.png" />
+    <Content Include="Lib\management\Lib\images\iphone.png" />
+    <Content Include="Lib\management\Lib\images\logo.png" />
+    <Content Include="Lib\management\Lib\images\macpro.png" />
+    <Content Include="Lib\management\Lib\images\thumb_1.jpg" />
+    <Content Include="Lib\management\Lib\images\thumb_2.jpg" />
+    <Content Include="Lib\management\Lib\images\thumb_3.jpg" />
+    <Content Include="Lib\management\Lib\js\app.data.js" />
+    <Content Include="Lib\management\Lib\js\app.js" />
+    <Content Include="Lib\management\Lib\js\app.plugin.js" />
+    <Content Include="Lib\management\Lib\js\appear\jquery.appear.js" />
+    <Content Include="Lib\management\Lib\js\apps\notes.js" />
+    <Content Include="Lib\management\Lib\js\apps\tasks.js" />
+    <Content Include="Lib\management\Lib\js\bootstrap.js" />
+    <Content Include="Lib\management\Lib\js\calendar\bootstrap_calendar.css" />
+    <Content Include="Lib\management\Lib\js\calendar\bootstrap_calendar.js" />
+    <Content Include="Lib\management\Lib\js\calendar\bootstrap_calendar.min.js" />
+    <Content Include="Lib\management\Lib\js\calendar\demo.js" />
+    <Content Include="Lib\management\Lib\js\charts\easypiechart\jquery.easy-pie-chart.js" />
+    <Content Include="Lib\management\Lib\js\charts\flot\demo.js" />
+    <Content Include="Lib\management\Lib\js\charts\flot\jquery.flot.min.js" />
+    <Content Include="Lib\management\Lib\js\charts\flot\jquery.flot.orderBars.js" />
+    <Content Include="Lib\management\Lib\js\charts\flot\jquery.flot.pie.min.js" />
+    <Content Include="Lib\management\Lib\js\charts\flot\jquery.flot.resize.js" />
+    <Content Include="Lib\management\Lib\js\charts\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Lib\management\Lib\js\charts\morris\morris.min.js" />
+    <Content Include="Lib\management\Lib\js\charts\morris\raphael-min.js" />
+    <Content Include="Lib\management\Lib\js\charts\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Lib\management\Lib\js\combodate\combodate.js" />
+    <Content Include="Lib\management\Lib\js\datatables\datatables.css" />
+    <Content Include="Lib\management\Lib\js\datatables\jquery.dataTables.min.js" />
+    <Content Include="Lib\management\Lib\js\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Lib\management\Lib\js\datepicker\datepicker.css" />
+    <Content Include="Lib\management\Lib\js\file-input\bootstrap.file-input.js" />
+    <Content Include="Lib\management\Lib\js\fuelux\fuelux.css" />
+    <Content Include="Lib\management\Lib\js\fuelux\fuelux.js" />
+    <Content Include="Lib\management\Lib\js\fullcalendar\fullcalendar.css" />
+    <Content Include="Lib\management\Lib\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Lib\management\Lib\js\grid\gallery.css" />
+    <Content Include="Lib\management\Lib\js\grid\gallery.js" />
+    <Content Include="Lib\management\Lib\js\grid\jquery.grid-a-licious.min.js" />
+    <Content Include="Lib\management\Lib\js\grid\masonry.pkgd.min.js" />
+    <Content Include="Lib\management\Lib\js\ie\excanvas.js" />
+    <Content Include="Lib\management\Lib\js\ie\fix.js" />
+    <Content Include="Lib\management\Lib\js\ie\html5.js" />
+    <Content Include="Lib\management\Lib\js\ie\respond.min.js" />
+    <Content Include="Lib\management\Lib\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Lib\management\Lib\js\jquery.min.js" />
+    <Content Include="Lib\management\Lib\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Lib\management\Lib\js\landing.js" />
+    <Content Include="Lib\management\Lib\js\libs\backbone-min.js" />
+    <Content Include="Lib\management\Lib\js\libs\backbone.localStorage-min.js" />
+    <Content Include="Lib\management\Lib\js\libs\jquery.pjax.js" />
+    <Content Include="Lib\management\Lib\js\libs\jquery.transit.js" />
+    <Content Include="Lib\management\Lib\js\libs\moment.min.js" />
+    <Content Include="Lib\management\Lib\js\libs\underscore-min.js" />
+    <Content Include="Lib\management\Lib\js\maps\demo.js" />
+    <Content Include="Lib\management\Lib\js\maps\gmaps.js" />
+    <Content Include="Lib\management\Lib\js\markdown\bartik.css" />
+    <Content Include="Lib\management\Lib\js\markdown\demo.js" />
+    <Content Include="Lib\management\Lib\js\markdown\epic-light.css" />
+    <Content Include="Lib\management\Lib\js\markdown\epiceditor.css" />
+    <Content Include="Lib\management\Lib\js\markdown\epiceditor.min.js" />
+    <Content Include="Lib\management\Lib\js\nestable\demo.js" />
+    <Content Include="Lib\management\Lib\js\nestable\jquery.nestable.js" />
+    <Content Include="Lib\management\Lib\js\nestable\nestable.css" />
+    <Content Include="Lib\management\Lib\js\parsley\parsley.extend.js" />
+    <Content Include="Lib\management\Lib\js\parsley\parsley.min.js" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\default_thumb.png" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\loader.gif" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\sprite.png" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\sprite_next.png" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\sprite_prev.png" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\sprite_x.png" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\default\sprite_y.png" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\jquery.prettyPhoto.js" />
+    <Content Include="Lib\management\Lib\js\prettyphoto\prettyPhoto.css" />
+    <Content Include="Lib\management\Lib\js\scroll\smoothscroll.js" />
+    <Content Include="Lib\management\Lib\js\select2\select2.css" />
+    <Content Include="Lib\management\Lib\js\select2\select2.min.js" />
+    <Content Include="Lib\management\Lib\js\slider\bootstrap-slider.js" />
+    <Content Include="Lib\management\Lib\js\slider\slider.css" />
+    <Content Include="Lib\management\Lib\js\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Lib\management\Lib\js\sortable\jquery.sortable.js" />
+    <Content Include="Lib\management\Lib\js\wysiwyg\bootstrap-wysiwyg.js" />
+    <Content Include="Lib\management\Lib\js\wysiwyg\demo.js" />
+    <Content Include="Lib\management\Lib\js\wysiwyg\jquery.hotkeys.js" />
+    <Content Include="Lib\management\Lib\less\readme.txt" />
+    <Content Include="Models\db\dandiModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dandiModel.edmx</DependentUpon>
+      <LastGenOutput>dandiModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\db\dandiModel.edmx.diagram">
+      <DependentUpon>dandiModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\db\dandiModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dandiModel.edmx</DependentUpon>
+      <LastGenOutput>dandiModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Lib\font\NanumBarunGothic.eot" />
+    <Content Include="Lib\font\NanumBarunGothic.ttf" />
+    <Content Include="Lib\font\NanumBarunGothic.woff" />
+    <Content Include="Lib\font\NanumBarunGothic.woff2" />
+    <Content Include="Lib\font\NanumBarunGothicBold.eot" />
+    <Content Include="Lib\font\NanumBarunGothicBold.ttf" />
+    <Content Include="Lib\font\NanumBarunGothicBold.woff" />
+    <Content Include="Lib\font\NanumBarunGothicBold.woff2" />
+    <Content Include="Lib\font\NanumBarunGothicLight.eot" />
+    <Content Include="Lib\font\NanumBarunGothicLight.ttf" />
+    <Content Include="Lib\font\NanumBarunGothicLight.woff" />
+    <Content Include="Lib\font\NanumBarunGothicLight.woff2" />
+    <Content Include="Lib\font\NanumBarunGothicUltraLight.eot" />
+    <Content Include="Lib\font\NanumBarunGothicUltraLight.ttf" />
+    <Content Include="Lib\font\NanumBarunGothicUltraLight.woff" />
+    <Content Include="Lib\font\NanumBarunGothicUltraLight.woff2" />
+    <Content Include="Lib\management\Lib\js\calendar\json.php" />
+    <Content Include="Lib\management\Lib\js\data\datagrid.json" />
+    <Content Include="Lib\management\Lib\js\data\datatable.json" />
+    <Content Include="Lib\management\Lib\fonts\fontawesome-webfont.eot" />
+    <Content Include="Lib\management\Lib\fonts\fontawesome-webfont.svg" />
+    <Content Include="Lib\management\Lib\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Lib\management\Lib\fonts\fontawesome-webfont.woff" />
+    <Content Include="Lib\management\Lib\fonts\FontAwesome.otf" />
+    <Content Include="Lib\management\Lib\fonts\opensans\opensans-bold.woff" />
+    <Content Include="Lib\management\Lib\fonts\opensans\opensans-light.woff" />
+    <Content Include="Lib\management\Lib\fonts\opensans\opensans.woff" />
+    <Content Include="Lib\management\Lib\less\app.arrow.less" />
+    <Content Include="Lib\management\Lib\less\app.buttons.less" />
+    <Content Include="Lib\management\Lib\less\app.colors.less" />
+    <Content Include="Lib\management\Lib\less\app.layout.less" />
+    <Content Include="Lib\management\Lib\less\app.less" />
+    <Content Include="Lib\management\Lib\less\app.mixins.less" />
+    <Content Include="Lib\management\Lib\less\app.nav.less" />
+    <Content Include="Lib\management\Lib\less\app.plugin.less" />
+    <Content Include="Lib\management\Lib\less\app.reset.less" />
+    <Content Include="Lib\management\Lib\less\app.slider.less" />
+    <Content Include="Lib\management\Lib\less\app.switch.less" />
+    <Content Include="Lib\management\Lib\less\app.utilities.less" />
+    <Content Include="Lib\management\Lib\less\app.variables.less" />
+    <Content Include="Lib\management\Lib\less\app.widgets.less" />
+    <Content Include="Lib\management\Lib\less\less.php" />
+    <Content Include="Lib\management\Lib\less\lessc.inc.php" />
+    <None Include="Properties\PublishProfiles\newDandi.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Lib\css\common\ng-table.css" />
+    <Content Include="Lib\css\home\mobile.css" />
+    <Content Include="Lib\images\home\bg2.JPG" />
+    <Content Include="Lib\images\home\bg4.jpg" />
+    <Content Include="Lib\images\common\dandi-header-typo-transperency.png" />
+    <Content Include="Lib\images\common\header-typo-transperency.png" />
+    <Content Include="Lib\js\common\ajaxBody.js" />
+    <Content Include="Lib\js\common\angular.js" />
+    <Content Include="Lib\js\common\animations.min.js" />
+    <Content Include="Lib\js\common\bootstrap.min.js" />
+    <Content Include="Lib\js\common\filters.js" />
+    <Content Include="Lib\js\common\mobile\jquery.fullPage-mobile.js" />
+    <Content Include="Lib\js\common\jquery-1.10.2.min.js" />
+    <Content Include="Lib\js\common\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Lib\js\common\jquery.appear.js" />
+    <Content Include="Lib\js\common\jquery.easing.1.3.js" />
+    <Content Include="Lib\js\common\web\jquery.fullPage.js" />
+    <Content Include="Lib\js\common\ng-table.js" />
+    <Content Include="Lib\js\common\ngTableResetPage.js" />
+    <Content Include="Lib\js\common\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="Lib\js\common\underscore-min.js" />
+    <Content Include="Lib\js\home\index.js" />
+    <Content Include="Lib\js\home\mobile.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Mobile.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\DandiMarket2\Index.cshtml" />
+    <Content Include="Views\DandiMarket2\RequestSeller.cshtml" />
+    <Content Include="Views\Shared\_RequestLayout.cshtml" />
+    <Content Include="Views\Project\Mobile.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
+    <Content Include="Views\Shared\_ManagementLayout.cshtml" />
+    <Content Include="Views\Management\DandiMarket2Seller.cshtml" />
+    <Content Include="Views\Management\DandiMarket2SellerDetail.cshtml" />
+    <Content Include="Views\Shared\_ProjectLayout.cshtml" />
+    <Content Include="Views\Project\Test.cshtml" />
+    <Content Include="Views\Shared\_DetailLayout.cshtml" />
+    <Content Include="Views\DandiMarket2\Band.cshtml" />
+    <Content Include="Views\DandiMarket2\OnedayClass.cshtml" />
+    <Content Include="Views\DandiMarket2\SuccessRequest.cshtml" />
+    <Content Include="Views\Management\User.cshtml" />
+    <Content Include="Views\Management\Project.cshtml" />
+    <Content Include="Views\Management\DandiMarket2Picture.cshtml" />
+    <Content Include="Views\Management\DandiMarket2AddPicture.cshtml" />
+    <Content Include="Views\Management\AddProject.cshtml" />
+    <Content Include="Views\Shared\_MobileHomeLayout.cshtml" />
+    <Content Include="Views\Mobile\Login.cshtml" />
+    <Content Include="Views\Mobile\Sign.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Management\DandiMarket2Oneday.cshtml" />
+    <Content Include="Views\Management\DandiMarket2OnedayDetail.cshtml" />
+    <Content Include="Views\Management\ProductCategory.cshtml" />
+    <Content Include="Views\Management\AddProductCategory.cshtml" />
+    <Content Include="Views\Management\DetailProductCategory.cshtml" />
+    <Content Include="Views\Management\AddPicture.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\DandiMarket3\Index.cshtml" />
+    <Content Include="Views\DandiMarket3\Seller.cshtml" />
+    <Content Include="Views\DandiMarket3\SellerDetail.cshtml" />
+    <Content Include="Views\DandiMarket3\RequestSeller.cshtml" />
+    <Content Include="Views\DandiMarket3\SuccessRequest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\" />
+    <Folder Include="Lib\management\image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1656/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

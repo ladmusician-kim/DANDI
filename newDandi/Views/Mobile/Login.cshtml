@@ -1,0 +1,59 @@
+﻿@model newDandi.Views.Mobile.ResultViewModel
+@{
+    Layout = "~/Views/Shared/_MobileHomeLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/mobile/common.css" rel="stylesheet" />
+}
+@section Script {
+}
+
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+    <a class="nav-brand dandi-white">DANDIMARKET</a>
+    <div class="row m-n">
+        <div class="col-md-4 col-md-offset-4 m-t-lg">
+            <section class="panel">
+                <header class="panel-heading text-center m-t m-b">
+                    
+                    @if (Model != null && Model.Error != null)
+                    {
+                        <span class="dandi-red">@(Model.Error)</span>
+                    }
+                    else
+                    {
+                        @:로그인
+                    }
+                </header>
+                @using (Html.BeginForm("Login", "Mobile", new { }, FormMethod.Post, new { @class = "panel-body" }))
+                {
+                    <div class="form-group">
+                        <label class="control-label">이메일</label>
+                        <input type="email" name="email" placeholder="이메일 주소를 입력해주세요." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">비밀번호</label>
+                        <input minLength="6" type="password" name="password" id="inputPassword" placeholder="비밀번호" class="form-control">
+                    </div>
+                    <div class="line line-dashed"></div>
+
+                    <input type="submit" class="btn dandi-btn-login btn-block m-b-sm" value="로그인" />
+
+                    <div class="line line-dashed"></div>
+                    <p class="text-muted text-center"><small>아직 회원이 아니세요?</small></p>
+                    <a href="/Mobile/Sign" class="btn btn-white btn-block m-b">회원가입</a>
+                }
+            </section>
+        </div>
+    </div>
+</section>
+<!-- footer -->
+<footer id="footer">
+    <div class="text-center padder clearfix">
+        <p>
+            <small>&copy; DANDIMARKET</small><br />
+            <a href="http://instagram.com/dandiproject" data-original-title="" title="">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </p>
+    </div>
+</footer>

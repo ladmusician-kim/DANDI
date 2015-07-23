@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/project/index.css" rel="stylesheet" />
+    <link href="~/Lib/css/project/theme.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/js/common/web/jquery.fullPage.js"></script>
+    <script src="~/Lib/js/common/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/js/project/index.js"></script>
+}
+
+
+<!-- footer -->
+<div class="dandi-footer">
+    DANDI?
+</div>
+
+<div id="fullpage" ng-controller="ProjectCtrl">
+    <div class="section dandi-intro bg-dark-alfa-50" id="section0">
+
+        <div class="col-sm-offset-1 row">
+            <div class="intro col-sm-5">
+                <h1 class="animate-init" data-anim-type="fade-in-down-big" data-anim-delay="200">
+                    DANDI PROJECT
+                </h1>
+                <p class="animate-init" data-anim-type="flip-in-top-front" data-anim-delay="800">
+                    우리들의! 프로젝트
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="dandimarket2">
+        <div class="row dandimarket2">
+            <div class="col-sm-12 bg-dark-alfa-50 dandimarket2-fullscreen">
+                <div class="dandimarket2-intro">
+                    <div class="dandimarket2-intro-title">
+                        <h1>DANDI MARKET 02</h1>
+                        <p>2015년의 봄, 우리들의 2번째 도전</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="dandimarket1">
+        <div class="dandimarket1">
+            <div class="dandimarket1-fullscreen bg-dark-alfa-50">
+                <div class="dandimarket1-intro">
+                    <div class="dandimarket1-intro-container">
+                        <div class="dandimarket1-intro">
+                            <div class="col-sm-offset-1 col-sm-8 dandimarket1">
+                                <div class="dandimarket1-intro-title">
+                                    <h1>DANDI MARKET 01</h1>
+                                </div>
+                                <div class="dandimarket1-intro-content">
+                                    <p style="font-size: 26px;">무엇보다 설렜던 우리들의 첫번째 도전</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dandimarket1-footer">
+                <div class="row">
+                    <div class="col-sm-3 dandimarket1-footer-item dandimarket1-footer-item-first">
+                        <a>
+                            <div class="dandimarket1-footer-item-content hvr-overline-from-left">
+                                <i class="fa fa-user-plus"></i>
+                                셀러보기
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 dandimarket1-footer-item">
+                        <a>
+                            <div class="dandimarket1-footer-item-content hvr-overline-from-left">
+                                <i class="fa fa-area-chart"></i>
+                                플리마켓 사진
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 dandimarket1-footer-item">
+                        <a>
+                            <div class="dandimarket1-footer-item-content hvr-overline-from-left">
+                                <i class="fa fa-file-image-o"></i>
+                                포스터
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 dandimarket1-footer-item dandimarket1-footer-item-last">
+                        <a>
+                            <div class="dandimarket1-footer-item-content hvr-overline-from-left">
+                                <i class="fa fa-video-camera"></i>
+                                홍보영상
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

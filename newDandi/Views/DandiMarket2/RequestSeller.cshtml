@@ -1,0 +1,209 @@
+﻿@model newDandi.Views.DandiMarket2.RequestViewModel
+@{
+    Layout = "/Views/Shared/_DetailLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/css/dandimarket2/requestSeller.css" rel="stylesheet" />
+    <link href="~/Lib/css/dandimarket2/common.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/js/common/ajaxBody.js"></script>
+    <script src="~/Lib/js/common/angular.js"></script>
+    <script src="~/Lib/js/common/underscore-min.js"></script>
+    <script src="~/Lib/js/dandimarket2/requestSeller.js"></script>
+}
+@Html.HiddenFor(x => x.Name)
+@Html.HiddenFor(x => x.Phone)
+@Html.HiddenFor(x => x.Info)
+@Html.HiddenFor(x => x.Product)
+@Html.HiddenFor(x => x.AboutCulture)
+@Html.HiddenFor(x => x.Email)
+@Html.HiddenFor(x => x.isEdit)
+
+<!-- Home Section -->
+<section class="page-section bg-dark-alfa-70" data-background="/Lib/images/common/bg/range-bg-web.jpg"
+         style="background-position-y: 70%;">
+    <div class="container relative pt-40">
+        <div class="align-center">
+            <h3 class="section-title">
+                @if (Model.isEdit)
+                {
+                    @:셀러신청 수정
+                }
+                else
+                {
+                    @:셀러신청
+                }
+            </h3>
+            <div class="section-heading">자기만의 색깔이 뚜렷하며 열정과패기를 가진 셀러분들이라면 누구나!!</div>
+        </div>
+    </div>
+</section>
+<section class="page-section" ng-app="myApp" ng-controller="Market2Ctrl" style="padding: 90px 0; border-bottom: 1px solid #ccc">
+    <div class="container relative pt-40">
+        <div class="">
+            <div class="col-sm-12">
+                <div class="dandi-title mb-10 align-center">
+                    <i class="fa fa-file-text fa-3x"></i>
+                    <br />
+                </div>
+                <div class="dandi-content" style="text-align: center !important; color: #ff4444;">
+                    @Model.Error
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="align-center">
+                    @if (Model.isEdit)
+                    {
+                        using (Html.BeginForm("EditRequestSeller", "DandiMarket2", FormMethod.Post, new { id = "requestSeller", enctype = "multipart/form-data" }))
+                        {
+                            @Html.HiddenFor(x => x.Id)
+                            <div class="dandi-request-content">
+                                <div class="dandi-form col-sm-offset-3 col-sm-6" novalidate>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-email"
+                                               ng-model="requestSeller.email"
+                                               name="email"
+                                               ng-class="requestSeller.emailClass"
+                                               class="form-control" type="text" placeholder="이메일 주소를 입력해 주세요." />
+
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-name"
+                                               ng-model="requestSeller.name"
+                                               ng-class="requestSeller.nameClass"
+                                               name="name"
+                                               class="form-control" type="text" placeholder="이름을 입력해 주세요." />
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-phone"
+                                               ng-model="requestSeller.phone"
+                                               ng-class="requestSeller.phoneClass"
+                                               name="phone"
+                                               class="form-control" type="text" placeholder="연락처를 입력해 주세요." />
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-product"
+                                               ng-model="requestSeller.product"
+                                               ng-class="requestSeller.productClass"
+                                               name="product"
+                                               class="form-control" type="text" placeholder="판매하실 물건을 입력해 주세요." />
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <textarea id="dandi-request-input-info"
+                                                  class="form-control"
+                                                  name="info"
+                                                  ng-model="requestSeller.info"
+                                                  ng-class="requestSeller.infoClass"
+                                                  placeholder="간략한 자기소개를 적어주세요.(20자이상)"></textarea>
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <textarea id="dandi-request-input-aboutculture"
+                                                  class="form-control"
+                                                  name="aboutCulture"
+                                                  ng-model="requestSeller.aboutculture"
+                                                  ng-class="requestSeller.aboutcultureClass"
+                                                  placeholder="본인이 생각하는 문화를 간략하게 적어주세요. (20자이상)"></textarea>
+                                    </div>
+                                    <div class="mb-20">
+                                        <input type="file" name="file" />
+                                    </div>
+                                    <div class="col-sm-12 mb-20">
+                                        <div class="dandi-content mb-10 align-center">
+                                            빨간색 박스가 있으면 제대로 입력되지 않았다라는 의미입니다!
+                                            <br />
+                                            <span style="color:#ff4444;">사진은 다시 선택해주세요!! -초보개발자올림-</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-70">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <a ng-click="submit()"
+                                                   class="btn btn-mod btn-border btn-large">
+                                                    수정하기
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("SubmitRequestSeller", "DandiMarket2", FormMethod.Post, new { id = "requestSeller", enctype = "multipart/form-data" }))
+                        {
+                            <div class="dandi-request-content">
+                                <div class="dandi-form col-sm-offset-3 col-sm-6" novalidate>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-email"
+                                               ng-model="requestSeller.email"
+                                               name="email"
+                                               ng-class="requestSeller.emailClass"
+                                               class="form-control" type="text" placeholder="이메일 주소를 입력해 주세요." />
+
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-name"
+                                               ng-model="requestSeller.name"
+                                               ng-class="requestSeller.nameClass"
+                                               name="name"
+                                               class="form-control" type="text" placeholder="이름을 입력해 주세요." />
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-phone"
+                                               ng-model="requestSeller.phone"
+                                               ng-class="requestSeller.phoneClass"
+                                               name="phone"
+                                               class="form-control" type="text" placeholder="연락처를 입력해 주세요." />
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <input id="dandi-request-input-product"
+                                               ng-model="requestSeller.product"
+                                               ng-class="requestSeller.productClass"
+                                               name="product"
+                                               class="form-control" type="text" placeholder="판매하실 물건을 입력해 주세요." />
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <textarea id="dandi-request-input-info"
+                                                  class="form-control"
+                                                  name="info"
+                                                  ng-model="requestSeller.info"
+                                                  ng-class="requestSeller.infoClass"
+                                                  placeholder="간략한 자기소개를 적어주세요.(20자이상)"></textarea>
+                                    </div>
+                                    <div class="mb-20 mt-20">
+                                        <textarea id="dandi-request-input-aboutculture"
+                                                  class="form-control"
+                                                  name="aboutCulture"
+                                                  ng-model="requestSeller.aboutculture"
+                                                  ng-class="requestSeller.aboutcultureClass"
+                                                  placeholder="본인이 생각하는 문화를 간략하게 적어주세요. (20자이상)"></textarea>
+                                    </div>
+                                    <div class="mb-20">
+                                        <input type="file" name="file" />
+                                    </div>
+                                    <div class="col-sm-12 mb-20">
+                                        <div class="dandi-content mb-10 align-center">
+                                            빨간색 박스가 있으면 제대로 입력되지 않았다라는 의미입니다!
+                                        </div>
+                                    </div>
+                                    <div class="mb-70">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <a ng-click="submit()"
+                                                   class="btn btn-mod btn-border btn-large">
+                                                    신청하기
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

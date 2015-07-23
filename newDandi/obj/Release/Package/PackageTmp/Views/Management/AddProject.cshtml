@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="/Lib/management/css/market2sellerdetail.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Lib/management/css/datepicker.css" type="text/css" />
+}
+@section Script {
+    <script src="/Lib/management/js/market2sellerdetail.js"></script>
+    <script src="/Lib/management/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $(".datepicker-input").each(function () { $(this).datepicker(); });
+    </script>
+}
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-white b-b">
+            <p>단디마켓#2 사진추가</p>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            @using (Html.BeginForm("AddProject", "Management", FormMethod.Post, new { id = "requestSeller", enctype = "multipart/form-data" }))
+                            {
+                                <p class="dandi-sub-title m-t">Title</p>
+                                <p class="dandi-description">
+                                    <input type="text" class="form-control" placeholder="사진 제목을 입력하세요" name="title">
+                                </p>
+                                <div class="line"></div>
+                                <p class="dandi-sub-title m-t">Content</p>
+                                <p class="dandi-description">
+                                    <textarea class="form-control" placeholder="내용을 입력하세요" name="content"></textarea>
+                                </p>
+                                @*<p class="dandi-sub-title m-t">Start Date</p>
+                                <p class="dandi-description">
+                                    <input class="input-sm input-s datepicker-input startDate form-control" size="16" type="text"
+                                           name="startDate" data-date-format="dd-mm-yyyy">
+                                    <input type="datetime" class="hidden_start" name="startDate"/>
+                                </p>
+                                <div class="line"></div>
+                                <p class="dandi-sub-title m-t">End Date</p>
+                                <p class="dandi-description">
+                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text"
+                                           name="endDate" data-date-format="dd-mm-yyyy">
+                                    <input type="datetime" class="hidden_start" name="endDate" />
+                                </p>*@
+                                <div class="line"></div>
+                                <p class="align-right">
+                                    <a href="/Management/ProductCategory" class="btn btn-s-md btn-default">목록보기</a>
+                                    <input type="submit" class="btn btn-s-md btn-danger" value="추가하기" />
+                                </p>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

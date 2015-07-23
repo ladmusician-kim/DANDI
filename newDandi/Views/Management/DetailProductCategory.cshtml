@@ -1,0 +1,52 @@
+﻿@model newDandi.Views.Management.CategoryViewModel
+@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+}
+@section Script {
+    <script src="@Url.Content("/Lib/management/js/addProductCategory.js")"></script>
+}
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-white b-b">
+            <p>카테고리 추가</p>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            @using (Html.BeginForm("EditProductCategory", "Management", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.HiddenFor(x => x.Id)
+                                <p class="dandi-sub-title m-t">카테고리</p>
+                                <p class="dandi-description">
+                                    <input type="text" class="form-control" placeholder="카테고리 이름" name="label" value="@(Model.Label)">
+                                </p>
+                                <div class="line"></div>
+
+                                <p class="align-right">
+                                    <a href="/Management/ProductCategory" class="btn btn-s-md btn-default">목록보기</a>
+                                    
+                                        @if (Model.IsDeprecated)
+                                        {
+                                            <a href="/Management/DeleteAliveProductCategory?id=@(Model.Id)&isDeprecated=false"
+                                               class="btn btn-s-md btn-danger">사용하기</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Management/DeleteAliveProductCategory?id=@(Model.Id)&isDeprecated=true"
+                                               class="btn btn-s-md btn-danger">삭제하기</a>
+                                        }
+                                    <input type="submit" class="btn btn-s-md btn-success" value="수정하기" />
+                                </p>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

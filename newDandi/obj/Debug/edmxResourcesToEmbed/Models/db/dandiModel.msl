@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dandiModelStoreContainer" CdmEntityContainer="dandiEntities">
+    <EntitySetMapping Name="dandiusers">
+      <EntityTypeMapping TypeName="dandiModel.dandiuser">
+        <MappingFragment StoreEntitySet="dandiuser">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="logined" ColumnName="logined" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="C_userid" ColumnName="_userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Daypics">
+      <EntityTypeMapping TypeName="dandiModel.Daypic">
+        <MappingFragment StoreEntitySet="Daypic">
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="for_projectid" ColumnName="for_projectid" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Errors">
+      <EntityTypeMapping TypeName="dandiModel.Error">
+        <MappingFragment StoreEntitySet="Error">
+          <ScalarProperty Name="for_projectid" ColumnName="for_projectid" />
+          <ScalarProperty Name="for_userid" ColumnName="for_userid" />
+          <ScalarProperty Name="isdeplecated" ColumnName="isdeplecated" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OnedayClasses">
+      <EntityTypeMapping TypeName="dandiModel.OnedayClass">
+        <MappingFragment StoreEntitySet="OnedayClass">
+          <ScalarProperty Name="for_userid" ColumnName="for_userid" />
+          <ScalarProperty Name="checkeddate" ColumnName="checkeddate" />
+          <ScalarProperty Name="ischecked" ColumnName="ischecked" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategories">
+      <EntityTypeMapping TypeName="dandiModel.ProductCategory">
+        <MappingFragment StoreEntitySet="ProductCategory">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="dandiModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestSellers">
+      <EntityTypeMapping TypeName="dandiModel.RequestSeller">
+        <MappingFragment StoreEntitySet="RequestSeller">
+          <ScalarProperty Name="for_productcategoryid" ColumnName="for_productcategoryid" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="for_projectid" ColumnName="for_projectid" />
+          <ScalarProperty Name="checkeddate" ColumnName="checkeddate" />
+          <ScalarProperty Name="submitted" ColumnName="submitted" />
+          <ScalarProperty Name="ischecked" ColumnName="ischecked" />
+          <ScalarProperty Name="for_userid" ColumnName="for_userid" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="aboutculture" ColumnName="aboutculture" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerCategories">
+      <EntityTypeMapping TypeName="dandiModel.SellerCategory">
+        <MappingFragment StoreEntitySet="SellerCategory">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="dandiModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="logined" ColumnName="logined" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="C_userid" ColumnName="_userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

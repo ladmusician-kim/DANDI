@@ -1,0 +1,15 @@
+.dandi-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.dandi-content {
+    font-size: 18px;
+    text-align: justify !important;
+    letter-spacing: 1px;
+}
+
+
+.dandi-num {
+    font-weight: bold;
+    font-size: 26px;
+}

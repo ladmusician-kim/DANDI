@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dandiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="dandiuser">
+    <Key>
+      <PropertyRef Name="_userid" />
+    </Key>
+    <Property Name="_userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="text" Nullable="false" />
+    <Property Name="created" Type="date" Nullable="false" />
+    <Property Name="logined" Type="date" Nullable="false" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Daypic">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pic" Type="varbinary(max)" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" />
+    <Property Name="for_projectid" Type="int" Nullable="false" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="content" Type="text" />
+  </EntityType>
+  <EntityType Name="Error">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="place" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contents" Type="text" Nullable="false" />
+    <Property Name="created" Type="date" Nullable="false" />
+    <Property Name="isdeplecated" Type="bit" Nullable="false" />
+    <Property Name="for_userid" Type="int" />
+    <Property Name="for_projectid" Type="int" />
+  </EntityType>
+  <EntityType Name="OnedayClass">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="created" Type="date" Nullable="false" />
+    <Property Name="ischecked" Type="bit" Nullable="false" />
+    <Property Name="checkeddate" Type="date" />
+    <Property Name="for_userid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="label" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="startdate" Type="datetime" Nullable="false" />
+    <Property Name="enddate" Type="datetime" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RequestSeller">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="info" Type="text" Nullable="false" />
+    <Property Name="aboutculture" Type="text" Nullable="false" />
+    <Property Name="product" Type="nvarchar(max)" />
+    <Property Name="pic" Type="varbinary(max)" />
+    <Property Name="for_userid" Type="int" Nullable="false" />
+    <Property Name="ischecked" Type="bit" Nullable="false" />
+    <Property Name="submitted" Type="date" Nullable="false" />
+    <Property Name="checkeddate" Type="date" />
+    <Property Name="for_projectid" Type="int" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="updated" Type="date" />
+    <Property Name="for_productcategoryid" Type="int" />
+  </EntityType>
+  <EntityType Name="SellerCategory">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="label" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="_userid" />
+    </Key>
+    <Property Name="_userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="created" Type="date" Nullable="false" />
+    <Property Name="logined" Type="date" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ProductCategory_RequestSeller">
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
+    <End Role="RequestSeller" Type="Self.RequestSeller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="RequestSeller">
+        <PropertyRef Name="for_productcategoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Daypic">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Daypic" Type="Self.Daypic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Daypic">
+        <PropertyRef Name="for_projectid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_OnedayClass">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="OnedayClass" Type="Self.OnedayClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="_userid" />
+      </Principal>
+      <Dependent Role="OnedayClass">
+        <PropertyRef Name="for_userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_RequestSeller">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="RequestSeller" Type="Self.RequestSeller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="_userid" />
+      </Principal>
+      <Dependent Role="RequestSeller">
+        <PropertyRef Name="for_userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dandiModelStoreContainer">
+    <EntitySet Name="dandiuser" EntityType="Self.dandiuser" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="Daypic" EntityType="Self.Daypic" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="Error" EntityType="Self.Error" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="OnedayClass" EntityType="Self.OnedayClass" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="RequestSeller" EntityType="Self.RequestSeller" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="SellerCategory" EntityType="Self.SellerCategory" Schema="lidu927" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="lidu927" store:Type="Tables" />
+    <AssociationSet Name="FK_ProductCategory_RequestSeller" Association="Self.FK_ProductCategory_RequestSeller">
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+      <End Role="RequestSeller" EntitySet="RequestSeller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Daypic" Association="Self.FK_Project_Daypic">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Daypic" EntitySet="Daypic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_OnedayClass" Association="Self.FK_User_OnedayClass">
+      <End Role="User" EntitySet="User" />
+      <End Role="OnedayClass" EntitySet="OnedayClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_RequestSeller" Association="Self.FK_User_RequestSeller">
+      <End Role="User" EntitySet="User" />
+      <End Role="RequestSeller" EntitySet="RequestSeller" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

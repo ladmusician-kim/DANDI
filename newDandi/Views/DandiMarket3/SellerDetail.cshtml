@@ -1,0 +1,96 @@
+﻿@model newDandi.Views.Management.DandiMarket2SellerDetailViewModel
+@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/management/css/market2sellerdetail.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/management/js/market2sellerdetail.js"></script>
+}
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-white b-b">
+            <p>@(Model.Seller.Name) 셀러 상세내역</p>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            @if (Model.Seller.IsChecked)
+                            {
+                                <header class="panel-heading bg-primary lter no-borders">
+                                    <div class="clearfix">
+                                        <div class="clear">
+                                            <small class="text-muted">확정된 셀러입니다</small>
+                                        </div>
+                                    </div>
+                                </header>
+                            }
+
+                            <p class="dandi-sub-title m-t">이름</p>
+                            <p class="dandi-description">@(Model.Seller.Name)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">전화번호</p>
+                            <p class="dandi-description">@(Model.Seller.Phone)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">이메일</p>
+                            <p class="dandi-description">@(Model.Seller.Email)</p>
+                            <div class="line"></div>
+
+
+                            <p class="dandi-sub-title">팔매할 물건</p>
+                            <p class="dandi-description">@(Model.Seller.Product)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">자기소개</p>
+                            <p class="dandi-description">@(Model.Seller.Info)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">문화에 대해서</p>
+                            <p class="dandi-description">@(Model.Seller.AboutCulture)</p>
+                            <div class="line"></div>
+
+                            <p class="dandi-sub-title">등록일</p>
+                            <p class="dandi-description">@(Model.Seller.Submited)</p>
+
+                            @if (Model.Seller.Updated != null)
+                            {
+                                <div class="line"></div>
+                                <p class="dandi-sub-title">수정일</p>
+                                <p class="dandi-description">@(Model.Seller.Updated)</p>
+                            }
+
+
+                            @if (Model.Seller.Picture != null && Model.Seller.Picture.Length > 0)
+                            {
+                                <div class="line"></div>
+                                <p class="dandi-sub-title">사진</p>
+                                <p class="dandi-description">
+                                    <img class="dandi-seller-image" src="/Management/GetSellerImage?id=@(Model.Seller.Id)" />
+                                </p>
+                            }
+
+                            <div class="line"></div>
+                            <p class="align-right">
+                                <a href="/Management/DandiMarket2Seller" class="btn btn-s-md btn-default">목록보기</a>
+                                @if (Model.Seller.IsChecked)
+                                {
+                                    <a href="/Management/SelectSeller?id=@(Model.Seller.Id)&isChecked=false" class="btn btn-s-md btn-danger">셀러 제외하기</a>
+                                }
+                                else
+                                {
+                                    <a href="/Management/SelectSeller?id=@(Model.Seller.Id)&isChecked=true" class="btn btn-s-md btn-success">셀러 확정하기</a>
+                                }
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

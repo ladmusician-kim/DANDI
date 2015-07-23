@@ -1,0 +1,242 @@
+body {
+    background: url('/Lib/images/common/bg/range-bg-mobile.jpg') no-repeat;
+    background-size: cover;
+    /*font-family: NanumBarunGothic, NanumGothic, "Malgun Gothic", "Apple SD Gothic Neo", dotum, sans-serif !important;*/
+}
+
+.dandimarekt {
+    margin: 1%;
+}
+.dandi-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: justify;
+    border-bottom: 1px solid #eeeeee;
+}
+.dandi-content {
+    color: #fff;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+a {
+    cursor: pointer;
+}
+
+p {
+    color: #fff;
+    font-size: 17px;
+    margin-left: auto !important;
+    margin-right: auto !Important;
+    margin-bottom: 10px;
+}
+
+.dandi-btn-login {
+    width: 100%;
+    text-align: center;
+    background: rgba(105, 105, 105, 0.38);
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.dandi-btn-login:hover {
+    background: rgba(105, 105, 105, 1);
+    cursor:pointer;
+}
+.dandi-btn-assign {
+    width: 100%;
+    text-align: center;
+    background: rgba(182, 165, 165, 0.38);
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.dandi-btn-assign:hover {
+    background: rgba(182, 165, 165, 1);
+    cursor:pointer;
+}
+
+h1 {
+    font-size: 2.5em !important;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/** intro **/
+.dandi-intro, .dandi-sign, .dandi-login .intro {
+    position: relative;
+    text-align: center;
+}
+
+
+/* Backgrounds will cover all the section
+	* --------------------------------------- */
+#section0,
+#section1,
+#section2,
+#section3 {
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Defining each sectino background and styles
+	* --------------------------------------- */
+/*#section0 {
+    background: #36465d;
+    background-image: url('/Lib/images/home/bg4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}*/
+/*
+#section2 {
+    background: #a77dc2;
+}
+
+#section3 {
+    background: #56bc8a;
+    padding: 6% 0 0 0;
+}*/
+
+#section3 h1 {
+    color: #000;
+}
+.dandi-intro-header, .dandi-footer, .dandi-footer-login {
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 9;
+    color: #f2f2f2;
+}
+
+.dandi-intro-header {
+    top: 0px;
+    height: 100px;
+    padding: 20px 0 0 0;
+    background: none;
+}
+
+.dandi-footer, .dandi-footer-login {
+    bottom: 0px;
+    height: 50px;
+    text-align: center;
+    background: #36465d;
+    vertical-align: middle;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.dandi-intro-header .logo {
+    width: 100%;
+}
+
+.dandi-intro-header .dandi-header-type {
+    width: 119px;
+    margin-left: 31px;
+    text-align: left;
+}
+
+.dandi-intro-header .dandi-header-menu {
+    float: right;
+    list-style: none;
+    margin-right: 1em;
+}
+
+    .dandi-intro-header .dandi-header-menu li {
+        width: 10%;
+        margin-right: 9px;
+        display: inline-table;
+    }
+
+        .dandi-intro-header .dandi-header-menu li a {
+            font-size: 18px;
+        }
+
+
+
+.dandi-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.dandi-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+    .dandi-form .form-control {
+        height: 40px !important;
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff !important;
+        font-size: 11px;
+    }
+
+    .dandi-form .dandi-sign-username {
+        display: -webkit-inline-box !important;
+    }
+
+    .dandi-form .dandi-btn {
+        height: 40px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 7px;
+    }
+
+        .dandi-form .dandi-btn:hover,
+        .dandi-form .dandi-btn:focus {
+            border-color: transparent;
+            background: #fff;
+            color: #36465d;
+        }
+
+    .dandi-form .dandi-sign-username-check {
+        width: 28% !important;
+        border: 4px solid #fff;
+        background: #0099CC !important;
+        border: none !important;
+        margin-left: 2%;
+    }
+
+    .dandi-form .dandi-btn-sign-complete {
+        width: 100% !important;
+        background: rgba(53, 169, 152, 0.55);
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+        .dandi-form .dandi-btn-sign-complete:hover {
+            width: 100% !important;
+            background: rgba(53, 169, 152, 1) !important;
+            font-weight: bold;
+            color: #fff;
+        }
+
+    .dandi-form .dandi-login-btn {
+        width: 100% !important;
+        background: #529ecc !important;
+        border: none !important;
+    }
+
+.dandi-already-login {
+    font-size: 20px;
+    color: #FF4444 !important;
+    font-weight: 500;
+}
+
+    .dandi-already-login:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
